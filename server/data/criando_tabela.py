@@ -1,30 +1,8 @@
+from distutils.util import execute
 import sqlite3
 from sqlite3 import Error
 
-# Criando banco de dados
-
-
-def createDatabase(data_base_name):
-    print(f'Criando DB SqLite, {data_base_name}')
-    con = None
-    try:
-        con = sqlite3.connect(data_base_name)
-        print(sqlite_version)
-        print(sqlite3.version_info)
-    except Error as ex:
-        print('Error: {e}')
-    finally:
-        if conn:
-            conn.close()
-
-
-if __name__ == '__main__':
-    caminho = 'D:\\Cursos e Estudos\\curso_python\\server\\data\\dbpy.db'
-    createDatabase(caminho)
-
 # Criando conexão
-
-
 def ConexaoBanco():
     caminho = 'D:\\Cursos e Estudos\\curso_python\\server\\data\\dbpy.db'
     con = None
@@ -33,10 +11,7 @@ def ConexaoBanco():
     except Error as ex:
         print(ex)
     return con
-
-
 vcon = ConexaoBanco()
-
 
 def criarTabela(conexao, sql):
     try:
@@ -45,7 +20,6 @@ def criarTabela(conexao, sql):
         print("Tabela Criada")
     except Error as ex:
         print(ex)
-
 
 # Criando Tabela
 vsql = """CREATE TABLE IF NOT EXISTS cst_icms(
