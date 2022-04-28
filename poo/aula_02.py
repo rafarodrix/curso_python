@@ -17,7 +17,7 @@ class Fila:
     def __init__(self):
         self.s_fila = []
 
-    """Instancia ou exemplo"""
+    #Instancia ou exemplo
     def s_entrar(self, obj):
         self.s_fila.append(obj)
         print(self.s_fila)
